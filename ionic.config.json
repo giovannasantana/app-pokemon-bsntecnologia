@@ -1,0 +1,7 @@
+{
+  "name": "app-pokemon-bsntecnologia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
