@@ -1,3 +1,4 @@
+import { PokemonService } from './../service/pokemon.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  pokemonList: any[] = [];
 
-  constructor() {}
+  constructor(private pokemonService: PokemonService) {}
 
+  ngOnInit(){
+    this.pokemonService.getPokemonList().subscribe(response => {
+      this.pokemonList = response.results;
+    });
+  }
 }
