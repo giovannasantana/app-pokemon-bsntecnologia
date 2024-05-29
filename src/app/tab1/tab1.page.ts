@@ -1,6 +1,7 @@
 import { NavController } from '@ionic/angular';
 import { PokemonService } from './../service/pokemon.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class Tab1Page  implements OnInit {
   pokemonList: any[] = [];
 
-  constructor(private pokemonService: PokemonService, private navCtrl: NavController) {}
+  constructor(private pokemonService: PokemonService, private navCtrl: NavController, private router: Router) {}
 
   ngOnInit(){
     this.pokemonService.getPokemonList().subscribe(response => {
@@ -19,15 +20,11 @@ export class Tab1Page  implements OnInit {
   }
 
   openDetailsPokemon(pokemon: any) {
-    this.navCtrl.navigateForward(`/pokemon-detail/${this.getPokemonId(pokemon.url)}`);
+    const pokemonId = this.getPokemonId(pokemon.url);
+    this.router.navigate([`/pokemon-detail/${pokemonId}`]);
   }
 
-  getPokemonId(url: string | undefined): string {
-    if (!url) {
-      return '';
-    }
-    const id = url.split('/').filter(segment => segment).pop();
-    return id ? id : '';
+  getPokemonId(url: string): string {
+    return url.split('/').filter(segment => segment).pop() || '';
   }
-
 }
