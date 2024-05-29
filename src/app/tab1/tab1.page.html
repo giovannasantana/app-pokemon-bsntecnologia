@@ -22,6 +22,22 @@
         <h2>{{ pokemon.name }}</h2>
       </ion-label>
     </ion-item>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="previousPage()" [disabled]="currentPage === 1">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="nextPage()">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
   </ion-list>
+
+  <ion-footer>
+
+  </ion-footer>
 
 </ion-content>
