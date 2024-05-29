@@ -1,0 +1,17 @@
+ion-list {
+  margin: 0;
+  padding: 0;
+}
+
+ion-item {
+  --inner-padding-end: 16px;
+  --inner-padding-start: 16px;
+  text-transform: capitalize;
+}
+
+.pokemon-item {
+  ion-avatar {
+    width: 48px;
+    height: 48px;
+  }
+}

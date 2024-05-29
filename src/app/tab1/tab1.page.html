@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="ion-text-center">
       InfoPokémon
     </ion-title>
   </ion-toolbar>
@@ -13,9 +13,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-item *ngFor="let pokemon of pokemonList" >
-      {{ pokemon.name }}
+  <ion-list lines="full">
+    <ion-item *ngFor="let pokemon of pokemonList" (click)="openDetailsPokemon(pokemon)" class="pokemon-item" >
+      <ion-avatar slot="start">
+        <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + getPokemonId(pokemon.url) + '.png'" alt="Pokemon Image">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ pokemon.name }}</h2>
+      </ion-label>
     </ion-item>
   </ion-list>
 
