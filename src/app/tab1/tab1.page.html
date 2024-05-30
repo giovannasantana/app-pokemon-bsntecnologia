@@ -21,6 +21,9 @@
       <ion-label>
         <h2>{{ pokemon.name }}</h2>
       </ion-label>
+      <ion-icon [name]="isFavorite(pokemon) ? 'star' : 'star-outline'"
+      slot="end"
+      (click)="toggleFavorite(pokemon, $event)"></ion-icon>
     </ion-item>
     <ion-toolbar>
       <ion-buttons slot="start">

@@ -45,4 +45,17 @@ export class Tab1Page  implements OnInit {
       this.updatePokemonList();
     }
   }
+
+  isFavorite(pokemon: boolean) {
+    return this.pokemonService.isFavorite(pokemon);
+  }
+
+  toggleFavorite(pokemon: any, event: any) {
+    event.stopPropagation();
+    if (this.isFavorite(pokemon)) {
+      this.pokemonService.removeFavorite(pokemon);
+    } else {
+      this.pokemonService.addFavorite(pokemon);
+    }
+  }
 }
