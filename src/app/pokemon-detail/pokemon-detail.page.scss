@@ -1,3 +1,75 @@
 ion-card-title, ion-col {
   text-transform: capitalize;
 }
+
+.pokemon-card {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-image {
+  text-align: center;
+}
+
+.pokemon-details {
+  padding: 20px;
+}
+
+.pokemon-name {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.pokemon-stats {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pokemon-abilities,
+.pokemon-types {
+  margin-bottom: 10px;
+}
+
+.pokemon-abilities ul,
+.pokemon-types ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pokemon-abilities li,
+.pokemon-types li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.pokemon-stats ion-grid {
+  margin-top: 10px;
+}
+
+.pokemon-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pokemon-info-item {
+  flex: 1;
+  text-align: center;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: #ddd;
+  margin: 0 10px;
+}
+
+.hp-value {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}

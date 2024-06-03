@@ -25,7 +25,18 @@ export class PokemonDetailPage implements OnInit {
     this.pokemonService.getPokemonDetails(this.pokemonId).subscribe((details: any) => {
       this.pokemonDetails = details;
       console.log(this.pokemonDetails);
-
     });
+  }
+
+  getIconForPokemonType(types: any[]): string[] {
+     // Verifica se o tipo de Pokémon está definido e não é nulo
+  if (types && types.length > 0) {
+    const type = types[0].type.name;
+    // Retorna o nome do arquivo SVG correspondente ao tipo de Pokémon
+    return types.map(typeInfo => `assets/icons/${typeInfo.type.name.toLowerCase()}.svg`);
+  } else {
+    // Se o tipo de Pokémon não estiver definido ou for nulo, retorna um ícone padrão
+    return ['assets/icons/default-icon.svg'];
+  }
   }
 }
