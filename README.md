@@ -32,7 +32,7 @@ Siga os passos abaixo para configurar e executar o projeto localmente:
    git clone https://github.com/seu-usuario/pokemon-app.git
    cd pokemon-app
 
-2. **Instale as dependências:**
+3. **Instale as dependências:**
   Certifique-se de ter o Node.js e o npm instalados em sua máquina. Depois, execute o comando:
 
   **npm install**
